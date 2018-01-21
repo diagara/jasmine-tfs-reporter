@@ -24,10 +24,10 @@ var toISOString = function(time) {
 
 var duration = function (start, finish) {
   if(!start) {
-    start = (new Date()).getTime();
+    start = new Date();
   }
   if(!finish) {
-    finish = (new Date()).getTime();
+    finish = new Date();
   }
   var diff = finish.getTime() - start.getTime();
   return pad((diff / 1000 / 60 / 60) % 100, 2)
