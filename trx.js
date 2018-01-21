@@ -45,8 +45,8 @@ function escape(str) {
 };
 
 module.exports = function (testResults) {
-    var start = new Date();
-    var finish = new Date();
+    var start = new Date().getTime();
+    var finish = new Date().getTime();
 
     var specs = testResults.specs.map(spec => {
         spec.suite = escape(spec.suite);
