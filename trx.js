@@ -74,7 +74,7 @@ module.exports = function (testResults) {
   <Times creation="${toISOString(start)}" start="${toISOString(start)}" finish="${toISOString(finish)}" />
   <Results>
     ${specs.map(spec =>
-    `<UnitTestResult executionId="${spec.executionId}" testId="${spec.testId}" testName="${spec.name}" computerName="${os.hostname()}" duration="${duration(spec.result.start, spec.result.finish)}" startTime="${toISOString(spec.result.start)}" endTime="${toISOString(spec.result.finish)}" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="${spec.result.outcome}" testListId="${suites[spec.result.suite]}">
+    `<UnitTestResult executionId="${spec.executionId}" testId="${spec.testId}" testName="${spec.name}" computerName="${os.hostname()}" duration="${duration(spec.result.start, spec.result.finish)}" startTime="${toISOString(new Date().getTime())}" endTime="${toISOString(new Date().getTime())}" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="${spec.result.outcome}" testListId="${suites[spec.result.suite]}">
       ${spec.result.outcome == 'Failed' ? `<Output>
         <ErrorInfo>
           <Message>${escape(spec.result.message)}</Message>
