@@ -39,8 +39,8 @@ function escape(str) {
 };
 
 module.exports = function (testResults) {
-    var start = Math.min.apply(null, testResults.specs.map(spec => spec.start.getTime()));
-    var finish = Math.max.apply(null, testResults.specs.map(spec => spec.finish.getTime()));
+    var start = new Date();
+    var finish = new Date();
 
     var specs = testResults.specs.map(spec => {
         spec.suite = escape(spec.suite);
