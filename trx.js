@@ -23,6 +23,12 @@ var toISOString = function(time) {
 };
 
 var duration = function (start, finish) {
+  if(!start) {
+    start = (new Date()).getTime();
+  }
+  if(!finish) {
+    finish = (new Date()).getTime();
+  }
   var diff = finish.getTime() - start.getTime();
   return pad((diff / 1000 / 60 / 60) % 100, 2)
         + ':' + pad((diff / 1000 / 60) % 60, 2) 
